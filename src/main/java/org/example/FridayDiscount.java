@@ -10,12 +10,13 @@ public class FridayDiscount extends BaseDiscount {
 
     @Override
     protected boolean isApplicable(Product product) {
-      return LocalDate.now().getDayOfWeek().getValue() == 5;
+        return true;
+      //return LocalDate.now().getDayOfWeek().getValue() == 5;
     }
 
     @Override
     protected double calculateDiscount(Product product) {
-        return product.price() * 0.9;
+        return product.price() * 0.1;
     }
 
 }

@@ -3,12 +3,12 @@ package org.example;
 public class QuantityDiscount extends BaseDiscount {
 
         private final int minQuantity;
+        private final double discount;
 
-
-        public QuantityDiscount(Discount nextDiscount, int quantity) {
+        public QuantityDiscount(Discount nextDiscount, int quantity, double discount) {
             super(nextDiscount);
             this.minQuantity = quantity;
-
+            this.discount = discount;
         }
 
         @Override
@@ -18,7 +18,7 @@ public class QuantityDiscount extends BaseDiscount {
 
         @Override
         protected double calculateDiscount(Product product) {
-            return product.price() * 0.8;
+            return product.price() * discount;
         }
 
 }
