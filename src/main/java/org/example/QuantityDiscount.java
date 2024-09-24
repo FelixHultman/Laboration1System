@@ -1,13 +1,24 @@
 package org.example;
 
-public class QuantityDiscount implements Discount {
-    @Override
-    public double apply(Product product) {
-        return 0;
-    }
+public class QuantityDiscount extends BaseDiscount {
 
-    @Override
-    public String getDescription(Product product) {
-        return "";
-    }
+        private final int minQuantity;
+
+
+        public QuantityDiscount(Discount nextDiscount, int quantity) {
+            super(nextDiscount);
+            this.minQuantity = quantity;
+
+        }
+
+        @Override
+        protected boolean isApplicable(Product product) {
+            return product.quantity() >= minQuantity;
+        }
+
+        @Override
+        protected double calculateDiscount(Product product) {
+            return product.price() * 0.8;
+        }
+
 }
