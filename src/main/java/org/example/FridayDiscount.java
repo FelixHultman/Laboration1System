@@ -4,8 +4,7 @@ import java.time.LocalDate;
 
 public class FridayDiscount extends BaseDiscount {
 
-    public FridayDiscount(Discount nextDiscount)
-    {
+    public FridayDiscount(Discount nextDiscount) {
         super(nextDiscount);
     }
 

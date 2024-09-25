@@ -20,12 +20,18 @@ public class Main {
     }
 
     private static void applyDiscount(Product product, Discount discount) {
+
         double discountAmount = discount.apply(product);
         String description = discount.getDescription(product);
 
         if (description.isBlank()) {
             description = "No discount applied";
         }
-        System.out.println(product.name() + " - " + product.price() + " kr - Discount: " + discountAmount + " kr - " + description);
+
+        System.out.println(product.name() + " - "
+                + product.price() +
+                " kr - Discount: " +
+                discountAmount + " kr - " +
+                description);
     }
 }

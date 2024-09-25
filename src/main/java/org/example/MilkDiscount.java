@@ -2,8 +2,7 @@ package org.example;
 
 public class MilkDiscount extends BaseDiscount {
 
-    public MilkDiscount(Discount nextDiscount)
-    {
+    public MilkDiscount(Discount nextDiscount) {
         super(nextDiscount);
     }
 
