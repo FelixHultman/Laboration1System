@@ -2,13 +2,14 @@ package org.example;
 
 public class MilkDiscount extends BaseDiscount {
 
-    public MilkDiscount(Discount nextDiscount) {
+    public MilkDiscount(Discount nextDiscount)
+    {
         super(nextDiscount);
     }
 
     @Override
     protected boolean isApplicable(Product product) {
-        return product.name().equals("Milk");
+        return product.name().equals("Mjölk");
     }
 
     @Override

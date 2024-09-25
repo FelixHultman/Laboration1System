@@ -1,6 +1,6 @@
 package org.example;
 
-public abstract  class BaseDiscount implements Discount {
+public abstract class BaseDiscount implements Discount {
 
     protected Discount nextDiscount;
 
@@ -14,9 +14,7 @@ public abstract  class BaseDiscount implements Discount {
         if (isApplicable(product)) {
             discount = calculateDiscount(product);
         }
-        if (nextDiscount != null) {
-            discount += nextDiscount.apply(product);
-        }
+        discount += nextDiscount.apply(product);
         return discount;
     }
 
@@ -25,11 +23,9 @@ public abstract  class BaseDiscount implements Discount {
         StringBuilder description = new StringBuilder();
 
         if (isApplicable(product)) {
-            description.append("Applied: ").append(getClass().getSimpleName()).append(" - ");
+            description.append("Applied: ").append(getClass().getSimpleName());
         }
-        if (nextDiscount != null) {
-            description.append(nextDiscount.getDescription(product));
-        }
+        description.append(nextDiscount.getDescription(product));
         return description.toString();
     }
 
