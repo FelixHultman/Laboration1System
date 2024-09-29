@@ -6,8 +6,8 @@ public class Main {
     public static void main(String[] args) {
 
         Product cheese = new Product("Ost", 6.5, 2);
-        Product milk = new Product("Mjölk", 5.5, 5);
-        Product bread = new Product("Bröd", 7.0, 5);
+        Product milk = new Product("Mjölk", 5.5, 1);
+        Product bread = new Product("Bröd", 176.0, 5);
 
         Discount allDiscounts = new FridayDiscount(
                 new MilkDiscount(

@@ -2,22 +2,23 @@ package org.example;
 
 public abstract class BaseDiscount implements Discount {
 
-    protected Discount nextDiscount;
 
-    public BaseDiscount(Discount nextDiscount) {
+    private final Discount nextDiscount;
+
+    protected BaseDiscount(Discount nextDiscount) {
         this.nextDiscount = nextDiscount;
     }
 
     @Override
     public double apply(Product product) {
-        double discount = 0;
+        double discount = 0.0;
 
         if (isApplicable(product)) {
             discount = calculateDiscount(product);
         }
 
-        discount += nextDiscount.apply(product);
-        return discount;
+        return discount += nextDiscount.apply(product);
+
     }
 
     @Override
